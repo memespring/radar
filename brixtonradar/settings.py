@@ -7,6 +7,9 @@ CAMPAIGN_ID = 1
 USE_I18N = True
 MEDIA_URL = '/site-media/'
 
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 TEMPLATE_LOADERS = (
