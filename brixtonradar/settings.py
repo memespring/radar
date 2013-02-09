@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.admin',
+    'json_field',
     'main',
 )
 
@@ -58,6 +59,8 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 MANAGERS = ADMINS
+
+SLEEP_BETWEEN_TWEETS = 6
 
 try:
     TWITTER_CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
