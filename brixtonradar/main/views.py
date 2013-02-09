@@ -5,8 +5,8 @@ import models
 
 def index(request):
     data= {}
+    data['events'] = models.Event.objects.all()
     return render_to_response('main/index.html', data, context_instance = RequestContext(request))
-
 
 def event(request, event_id):
     data= {}

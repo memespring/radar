@@ -15,7 +15,19 @@
 	    <title>{% block title %}{% endblock %} | brixtonradar</title>
 	</head>
 	<body onload="{% block onload %}{% endblock %}">
-    {% block content %}{% endblock %}
+            <div class="navbar navbar-inverse">
+                  <div class="navbar-inner">
+                        <a class="brand" href="/">BRIXTON RADAR</a>
+                        <!-- <ul class="nav">
+                              <li class="active"><a href="#">Home</a></li>
+                              <li><a href="#">Link</a></li>
+                              <li><a href="#">Link</a></li>
+                        </ul> -->
+                  </div>
+            </div>
+            <div class="container-fluid">
+                  {% block content %}{% endblock %}
+            </div>
 	</body>
 </html>
 

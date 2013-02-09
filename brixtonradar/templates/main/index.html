@@ -1,5 +1,11 @@
 {% extends "main/base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block content %}
-    <h2>Hello!</h2>
+    <ul class="nav nav-tabs nav-stacked">
+        {% for event in events %}
+            <li>
+                <a href="{% url event event.id %}">{{event.message}}</a>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

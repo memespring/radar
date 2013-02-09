@@ -1,0 +1,9 @@
+{% extends "main/base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+    <h1>{{event.event_type.display_name}}</h1>
+    <h2>{{event.message}}</h2>
+    <h3>{{event.created}}</h3>
+    <a href="{{event.info_link}}" class="btn btn-large btn-inverse">View details</a>
+{% endblock %}
+
