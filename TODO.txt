@@ -2,3 +2,4 @@
 - don't tweet at night
 - add max tweets to send at once
 - page to display details
+- setup cron jobs

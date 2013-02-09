@@ -29,7 +29,7 @@ class Command(BaseCommand):
 
                         applicant = address.split(',')[0]
                         application_type = details.replace('Application for ', '')
-                        message = "%s has applied for a %s " % (applicant, application_type)
+                        message = "%s applied for a %s " % (applicant, application_type)
 
                         event = models.Event()
                         event.message = message
