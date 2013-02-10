@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
+from django.core.urlresolvers import reverse
 import twitter
 import settings
 import time
@@ -17,7 +18,8 @@ consumer_secret=settings.TWITTER_CONSUMER_SECRET, access_token_key=settings.TWIT
 
         for alert in alerts:
             print "Posting tweet"
-            status = api.PostUpdate(alert.event.message, latitude=alert.event.lat, longitude=alert.event.lng)
+            url = '%s/%s' % (settings.BASE_URL, reverse('event', args=[alert.event.pk]))
+            status = api.PostUpdate(alert.event.message + ' ' + url, latitude=alert.event.lat, longitude=alert.event.lng)
             print "Tweet sent %s" % alert.event.message
             time.sleep(settings.SLEEP_BETWEEN_TWEETS)
             print "Waiting before sending next tweet"
