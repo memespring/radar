@@ -6,6 +6,10 @@ class EventType(models.Model):
     short_name = models.CharField(max_length = 100, null=False, blank=False)
     display_name = models.CharField(max_length = 100, null=False, blank=False)
 
+    def __str__(self):
+      return self.display_name
+
+
 class Event(models.Model):
     class Meta:
         ordering = ['-created']
@@ -22,8 +26,12 @@ class Event(models.Model):
     lng = models.FloatField(null=True, blank=True)
     data = JSONField()
 
+    def __str__(self):
+      return self.event_type.display_name + ' - ' + self.message
+
 class Alert(models.Model):
     event = models.ForeignKey(Event)
+
 
 def event_created(sender, instance, created, **kwargs):
     if created:
