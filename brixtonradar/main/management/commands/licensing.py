@@ -7,6 +7,11 @@ from main import models
 
 class Command(BaseCommand):
 
+    def humanize(self, text):
+
+        result = text.replace('review of premises licence', "is having it's licence reviewed")
+        result = text.replace('applied for a new premises licence', 'applied for a licence')
+
     def handle(self, *args, **options):
         print "Starting to scrape"
         html = urllib.urlopen('http://www.lambeth.gov.uk/Services/Business/LicencesStreetTrading/AlcoholEntertainmentLateNightRefreshment/CurrentApplications.htm')
