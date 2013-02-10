@@ -13,7 +13,7 @@ class Event(models.Model):
     message = models.CharField(max_length = 255, null=False, blank=False)
     event_type = models.ForeignKey(EventType)
     info_link = models.URLField(null=True, blank=False)
-    action_link = models.URLField(null=True, blank=False)
+    action_link = models.URLField(null=True, blank=True)
     guid = models.CharField(max_length = 255, null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True)
     occured = models.DateTimeField(null=True)

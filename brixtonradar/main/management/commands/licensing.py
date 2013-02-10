@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def humanize(self, text):
 
         text = text.replace('review of premises licence', "is having it's licence reviewed")
-        text = text.replace('applied for a new premises licence', 'applied for a licence')
+        text = text.replace('new premises licence', 'applied for a licence')
         text = text.replace('time limited premises licence', 'applied for a time limited licence')
 
         return text
