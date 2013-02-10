@@ -9,8 +9,11 @@ class Command(BaseCommand):
 
     def humanize(self, text):
 
-        result = text.replace('review of premises licence', "is having it's licence reviewed")
-        result = text.replace('applied for a new premises licence', 'applied for a licence')
+        text = text.replace('review of premises licence', "is having it's licence reviewed")
+        text = text.replace('applied for a new premises licence', 'applied for a licence')
+        text = text.replace('time limited premises licence', 'applied for a time limited licence')
+
+        return text
 
     def handle(self, *args, **options):
         print "Starting to scrape"
@@ -34,10 +37,10 @@ class Command(BaseCommand):
 
                         applicant = address.split(',')[0]
                         application_type = details.replace('Application for ', '')
-                        message = "%s applied for a %s " % (applicant, application_type)
+                        message = "%s %s " % (applicant, application_type)
 
                         event = models.Event()
-                        event.message = message
+                        event.message = self.humanize(message)
                         event.event_type = models.EventType.objects.get(short_name='licence')
                         event.info_link = application_pdf_link
                         event.guid = application_pdf_link
