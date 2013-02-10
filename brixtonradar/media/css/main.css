@@ -1,0 +1,22 @@
+body {background:url(../images/background.png) no-repeat 0 0 #000; font-size:130%;}
+.brand {font-family:"Gill Sans", "Helvetica", sans-serif; font-weight:normal;}
+.navbar .brand {color:#fff; font-size:30px;}
+.navbar .brand img {border-radius:3px; border:solid 3px #fff; width:30px; height:30px;
+    margin-top:-5px;margin-right:8px;}
+.event-list {}
+.event-list li {background-color:#fff; margin-bottom:0.5em; float:left;
+    clear:left; margin:none;}
+.event-list li:hover {opacity:1;}
+
+.event-header{background-color:#fff; float:left; clear:left; font-weight:normal;
+    padding:10px; opacity:0.8em!important; margin-bottom:1em;}
+
+.event-detail{background-color:#fff; float:left; clear:left; font-weight:normal;
+    padding:20px; opacity:0.8em!important;}
+
+@media (max-width: 480px) {
+
+    .navbar .brand img {display:block; margin:0 auto 10px auto;}
+    .navbar .brand {text-align:center; line-height: 1.1em}
+
+}
