@@ -25,8 +25,8 @@ class Command(BaseCommand):
                     datetime_scraped = datetime_scraped + ' ' + div.text
                 event_datetime = datetime.strptime(datetime_scraped, " %d %b '%y-%a %I.%M%p" )
 
-                # is today?
-                if (event_datetime -  datetime.now()).days == 0:
+                # is today and not a Sunday?
+                if (event_datetime -  datetime.now()).days == 0 and datetime.now().weekday() != 6:
 
                     #artist
                     artist_td = row.find('td', {'class': 'eventViewListName'})
