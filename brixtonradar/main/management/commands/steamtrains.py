@@ -14,7 +14,9 @@ class Command(BaseCommand):
         url = 'http://www.beholder.co.uk/steam/'
         html = urllib.urlopen(url)
         page = BeautifulSoup.BeautifulSoup(html)
-        brixton_row = page.find('tr', {'id': 'beholder_row_BRX'})
+        #brixton_row = page.find('tr', {'id': 'beholder_row_BRX'})
+        #value = brixton_row.findAll('td')[1].string.strip()
+        brixton_row = page.find('tr', {'id': 'beholder_row_LAN'})
         values = brixton_row.findAll('td')[1].findChildren()
         if values == []:
             print "NO TRAINS :("

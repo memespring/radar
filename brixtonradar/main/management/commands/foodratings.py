@@ -41,28 +41,3 @@ class Command(BaseCommand):
                             event.data = {'business_name': venue['BusinessName'], 'business_type': venue['BusinessType'], 'rating_value': int(venue['RatingValue'])}
                             event.save()
                             print "saved %s " % event.message
-
-
-
-
-        # for application in data['planning_applications']:
-        #     existing_events = models.Event.objects.filter(guid=application['url'])
-        #     if len(existing_events) == 0:
-        #          if geo.is_local({'lat': application['lat'], 'lng': application['lng']}):
-        #             address = application['address']
-        #             building_name =  address.split(' London')[0]
-        #             action =  self.guess_type(application['description'])
-        #             agent = self.get_agent(application)
-
-        #             message = "%s want %s %s" % (agent, action, building_name)
-
-        #             event = models.Event()
-        #             event.message = message
-        #             event.event_type = models.EventType.objects.get(short_name='planning')
-        #             event.info_link = application['url']
-        #             event.guid = application['url']
-        #             event.address = address
-        #             event.lng =  application['lng']
-        #             event.lat = application['lat']
-        #             event.data = {'agent': agent, 'description': application['description'], 'application type': application['application_type']}
-        #             event.save()
