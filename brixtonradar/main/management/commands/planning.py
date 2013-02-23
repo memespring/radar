@@ -35,7 +35,7 @@ class Command(BaseCommand):
                     action =  self.guess_type(application['description'])
                     agent = self.get_agent(application)
 
-                    message = "%s want %s %s" % (agent, action, building_name)
+                    message = "%s %s %s" % (agent, action, building_name)
 
                     event = models.Event()
                     event.message = message
