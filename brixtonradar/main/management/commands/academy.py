@@ -45,7 +45,7 @@ class Command(BaseCommand):
 
                             if len(existing_events) == 0:
                                 event = models.Event()
-                                event.message = '"Buy/sell tickets for %s"' % artist_name
+                                event.message = 'The academy sold out tonight: %s"' % artist_name
                                 event.event_type = models.EventType.objects.get(short_name='academy')
                                 event.info_link = url
                                 event.guid = guid
