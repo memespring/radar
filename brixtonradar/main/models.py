@@ -27,13 +27,13 @@ class Event(models.Model):
     data = JSONField()
 
     def __str__(self):
-      return self.event_type.display_name + ' - ' + self.message
+      return self.event_type.display_name + ' - ' + self.message.encode('ascii', errors='replace')
 
 class Alert(models.Model):
     event = models.ForeignKey(Event)
 
     def __str__(self):
-        return self.event.event_type.display_name + ' - ' + self.event.message
+        return self.event.event_type.display_name + ' - ' + self.event.message.encode('ascii', errors='replace')
 
 def event_created(sender, instance, created, **kwargs):
     if created:
