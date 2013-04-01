@@ -32,6 +32,8 @@ class Event(models.Model):
 class Alert(models.Model):
     event = models.ForeignKey(Event)
 
+    def __str__(self):
+        return self.event.event_type.display_name + ' - ' + self.event.message
 
 def event_created(sender, instance, created, **kwargs):
     if created:
