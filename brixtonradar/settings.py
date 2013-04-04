@@ -64,7 +64,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 SLEEP_BETWEEN_TWEETS = 60
-BASE_URL = 'http://brixton.radar.oftcc.net'
+BASE_URL = 'http://radar.brixtonbuzz.com'
 
 try:
     TWITTER_CONSUMER_KEY = os.environ['TWITTER_CONSUMER_KEY']
