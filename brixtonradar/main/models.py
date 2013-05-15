@@ -9,7 +9,6 @@ class EventType(models.Model):
     def __str__(self):
       return self.display_name
 
-
 class Event(models.Model):
     class Meta:
         ordering = ['-created']

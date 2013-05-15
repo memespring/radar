@@ -34,6 +34,8 @@ class Command(BaseCommand):
                     building_name =  address.split(' London')[0]
                     action =  self.guess_type(application['description'])
                     agent = self.get_agent(application)
+                    if agent == None:
+                        agent = 'Someone'
 
                     message = "%s %s %s" % (agent, action, building_name)
 
