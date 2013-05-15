@@ -9,7 +9,7 @@
     <ul class="event-list nav nav-tabs nav-stacked">
         {% for event in events %}
             <li>
-                <a href="{% url event event.id %}">{{event.message}}</a>
+                <a href="{{event.info_link}}">{{event.message}}</a>
             </li>
         {% endfor %}
     </ul>
