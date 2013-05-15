@@ -10,5 +10,3 @@ python-twitter==0.8.5
 simplejson==3.0.7
 six==1.2.0
 wsgiref==0.1.2
-
-
