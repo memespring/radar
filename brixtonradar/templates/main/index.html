@@ -1,6 +1,11 @@
 {% extends "main/base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block content %}
+    <p class="intro">
+        Brixton Radar is an automatic feed of things happening in 1/2 mile around central Brixton, including planning, licensing, food safety and steam trains.
+        <br/>
+        <a href="http://twitter.com/brixtonradar">Follow on Twitter</a>
+    </p>
     <ul class="event-list nav nav-tabs nav-stacked">
         {% for event in events %}
             <li>

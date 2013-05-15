@@ -3,10 +3,13 @@ body {background:url(../images/background.png) no-repeat 0 0 #000; font-size:130
 .navbar .brand {color:#fff; font-size:30px;}
 .navbar .brand img {border-radius:3px; border:solid 3px #fff; width:30px; height:30px;
     margin-top:-5px;margin-right:8px;}
+.intro {padding:0.5em; font-size:70%; background:#fff;}
 .event-list {}
-.event-list li {background-color:#fff; margin-bottom:0.5em; float:left;
+.event-list li {background:#29d124; color:#fff; border-radius:3px; border:solid 3px #fff;margin-bottom:0.5em; float:left;
     clear:left; margin:none;}
-.event-list li:hover {opacity:1;}
+.event-list li a {color:#fff;}
+.event-list li a:hover {color:#08c;}
+
 
 .event-header{background-color:#fff; float:left; clear:left; font-weight:normal;
     padding:10px; opacity:0.8em!important; margin-bottom:1em;}
@@ -17,6 +20,25 @@ body {background:url(../images/background.png) no-repeat 0 0 #000; font-size:130
 @media (max-width: 480px) {
 
     .navbar .brand img {display:block; margin:0 auto 10px auto;}
-    .navbar .brand {text-align:center; line-height: 1.1em}
+    .navbar .brand {text-align:center; line-height: 1.1em; width:100%;}
+}
 
+
+/* Brixton buzz */
+#brixtonbuzz-menu {background:#2D092E; border-bottom:1px solid #390B3B;
+    font-family:'Lucida Grande',Arial,Helvetica,sans-serif; line-height: 1.1;}
+#brixtonbuzz-menu ul { margin:0;padding:0; position:relative;}
+.sf-menu li {float: left;position: relative;list-style: none;margin: 0;padding: 0;}
+#brixtonbuzz-menu .sf-menu a {
+color: #FFF;
+}
+
+#brixtonbuzz-menu .sf-menu a {
+display: block;
+text-decoration: none;
+padding: 7px 10px 8px;
+color: #fff;
+font-size: 10px;
+text-transform:uppercase;
+border-right: 1px solid #333;
 }

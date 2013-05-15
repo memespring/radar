@@ -17,7 +17,7 @@ class Command(BaseCommand):
         if haystack.find('change of use') > -1:
             result = "want to change the use of"
         elif haystack.find('demolition') > -1:
-            result = "want to demolish"
+            result = "applied for a demolition at"
         elif haystack.find('erect') > -1:
             result = "want to build something at"
 
