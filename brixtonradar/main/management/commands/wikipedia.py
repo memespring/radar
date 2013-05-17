@@ -32,7 +32,7 @@ class Command(BaseCommand):
                     save = False
 
                     #check if recent (last few days)
-                    yesterday = date.today() - timedelta(30)
+                    yesterday = date.today() - timedelta(3)
                     save = (datetime_updated.date() > yesterday)
 
                     if save:
