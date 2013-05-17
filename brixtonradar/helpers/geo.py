@@ -71,7 +71,6 @@ def is_local(latlng):
     if latlng['lng'] >= top_left['lng'] and latlng['lng'] <= top_right['lng']:
         if latlng['lat'] > bottom_left['lat'] and latlng['lat'] <= top_left['lat']:
             result = True
-
     return result
 
 def postcode_latlng(postcode):
