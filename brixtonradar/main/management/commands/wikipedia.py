@@ -36,16 +36,18 @@ class Command(BaseCommand):
                     save = (datetime_updated.date() > yesterday)
 
                     if save:
-                        print "save"
-                        event = models.Event()
-                        event.message = message
-                        event.event_type = models.EventType.objects.get(short_name='wikipedia')
-                        event.info_link = entry['links'][0]['href']
-                        event.guid = entry['links'][0]['href']
-                        event.address = ''
-                        event.lng =  article['lng']
-                        event.lat = article['lat']
-                        event.data = article
-                        event.save()
+                        existing_events = models.Event.objects.filter(guid=entry['links'][0]['href'])
+                        if len(existing_events) == 0:
+                            print "save"
+                            event = models.Event()
+                            event.message = message
+                            event.event_type = models.EventType.objects.get(short_name='wikipedia')
+                            event.info_link = entry['links'][0]['href']
+                            event.guid = entry['links'][0]['href']
+                            event.address = ''
+                            event.lng =  article['lng']
+                            event.lat = article['lat']
+                            event.data = article
+                            event.save()
 
 
